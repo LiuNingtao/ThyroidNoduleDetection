@@ -38,6 +38,6 @@ The code for data processing and model evaluation is independent, and each funct
 MIT
 
 
-[//]:
+[//]: #
    [SOLO]: <https://github.com/vturrisi/solo-learn>
    [MMTracking]: <https://github.com/open-mmlab/mmtracking>
