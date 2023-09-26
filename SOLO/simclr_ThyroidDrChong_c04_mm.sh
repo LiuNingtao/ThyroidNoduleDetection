@@ -1,0 +1,39 @@
+# bash_files/pretrain/imagenet-100/simclr_ThyroidDrChong_c04_mm.sh
+python3 ../../../main_pretrain.py \
+    --dataset custom \
+    --backbone resnet50 \
+    --data_dir /path/to/dataset \
+    --train_dir /path/to/train/dataset \
+    --val_dir /path/to/val/dataset\
+    --max_epochs 5 \
+    --gpus 0 \
+    --accelerator gpu \
+    --strategy ddp \
+    --sync_batchnorm \
+    --precision 16 \
+    --optimizer sgd \
+    --lars \
+    --grad_clip_lars \
+    --eta_lars 0.02 \
+    --exclude_bias_n_norm \
+    --scheduler warmup_cosine \
+    --lr 0.3 \
+    --weight_decay 1e-4 \
+    --batch_size 32 \
+    --num_workers 4 \
+    --brightness 0.8 \
+    --contrast 0.8 \
+    --saturation 0.8 \
+    --hue 0.2 \
+    --num_crops_per_aug 2 \
+    --crop_size 448 \
+    --name simclr-200ep-drchong_modified \
+    --project solo-learn \
+    --entity unitn-mhug \
+    --save_checkpoint \
+    --method simclr \
+    --temperature 0.2 \
+    --proj_hidden_dim 2048 \
+    --no_labels \
+    --checkpoint_dir /path/to/checkpoint \
+    --auto_resume \
